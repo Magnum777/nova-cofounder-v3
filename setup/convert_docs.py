@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert .md files to HTML and PDF via Playwright (clean headers/footers)."""
+"""Convert .md files to HTML and PDF (via pdfkit + wkhtmltopdf)."""
 
 import markdown
 import os
@@ -7,6 +7,7 @@ from pathlib import Path
 
 BASE = Path(__file__).parent.parent / "docs"
 STYLE = BASE / "nova-style.css"
+WKHTML = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
 
 def md_to_html(md_path, html_path, title="Nova AI Cofounder V3"):
     """Convert markdown to styled HTML."""
@@ -41,34 +42,46 @@ def md_to_html(md_path, html_path, title="Nova AI Cofounder V3"):
     print(f"  HTML: {md_path.name}")
 
 def html_to_pdf(html_path, pdf_path):
-    """Convert HTML to PDF via Playwright (no headers/footers)."""
+    """Convert HTML to PDF via pdfkit (wkhtmltopdf) — no headers/footers."""
     try:
-        from playwright.sync_api import sync_playwright
+        import pdfkit
     except ImportError:
-        print(f"  PDF skipped: Install playwright (`pip install playwright; playwright install chromium`)")
+        print(f"  PDF skipped: Install pdfkit (`pip install pdfkit`)")
         return False
     
-    file_url = "file:///" + str(html_path).replace("\\", "/")
+    options = {
+        'page-size': 'A4',
+        'margin-top': '20mm',
+        'margin-right': '15mm',
+        'margin-bottom': '20mm',
+        'margin-left': '15mm',
+        'encoding': 'UTF-8',
+        'no-outline': None,
+        'enable-local-file-access': None,
+        'disable-smart-shrinking': None,
+        'print-media-type': None,
+        # Suppress ALL headers/footers
+        'header-left': '',
+        'header-center': '',
+        'header-right': '',
+        'header-line': '',
+        'footer-left': '',
+        'footer-center': '',
+        'footer-right': '',
+        'footer-line': '',
+    }
     
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.goto(file_url, wait_until="networkidle")
-        
-        page.pdf(
-            path=str(pdf_path),
-            format="A4",
-            margin={"top": "20mm", "right": "15mm", "bottom": "20mm", "left": "15mm"},
-            display_header_footer=False
-        )
-        browser.close()
+    config = pdfkit.configuration(wkhtmltopdf=WKHTML)
     
-    if pdf_path.exists():
-        print(f"  PDF:  {pdf_path.name}")
-        return True
-    else:
-        print(f"  PDF failed: {pdf_path.name}")
-        return False
+    try:
+        pdfkit.from_file(str(html_path), str(pdf_path), options=options, configuration=config)
+        if pdf_path.exists():
+            print(f"  PDF:  {pdf_path.name}")
+            return True
+    except Exception as e:
+        print(f"  PDF failed: {pdf_path.name} — {e}")
+    
+    return False
 
 def main():
     print("=== Converting Markdown to HTML + PDF ===")
