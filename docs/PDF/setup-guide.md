@@ -212,7 +212,7 @@ openclaw cron add --name "price-check" --schedule "0 * * * *" --command "python 
 **Fix:** You're running a large model on CPU. Options:
 1. Use a smaller model: `ollama pull deepseek-v4-flash`
 2. Use API mode: Re-run installer with `-Model api`
-3. Add a GPU (the 9070 XT in your machine helps)
+3. Add a dedicated GPU (AMD or NVIDIA, 8GB+ VRAM)
 
 ### "Discord bot won't connect"
 **Fix:**

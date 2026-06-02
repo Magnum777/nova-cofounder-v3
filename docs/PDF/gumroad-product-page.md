@@ -216,7 +216,6 @@ Install in 30 minutes. Start delegating work today.
 ## Footer
 
 **Created by:** James "Opus" Henderson / Layered Media LLC
-**Contact:** nova.cofounder@gmail.com
 **Community:** https://discord.gg/XxDCEwg7Wh
 **Blog:** https://www.aicofounderstack.com
 

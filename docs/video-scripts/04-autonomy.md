@@ -74,7 +74,7 @@
 **Visual:** Show the brief:
 
 ```
-Good morning, Opus.
+Good morning, [Your Name].
 
 Weekend summary:
 • 47 emails processed (8 spam, 2 urgent held for you)

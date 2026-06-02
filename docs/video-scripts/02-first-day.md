@@ -27,7 +27,7 @@
 
 **Visual:** Scroll through the brief.
 
-- Weather: Warner Robins, 84°F, partly cloudy
+- Weather: Atlanta, 84°F, partly cloudy
 - Calendar: 2 meetings today, first at 10 AM
 - Projects: TradeBot active, 2 positions open
 - Emails: 3 unread, 0 urgent
@@ -44,7 +44,7 @@
 **Voiceover:**
 "First task: my Gmail is a mess. I tell Nova to clean it."
 
-**Visual:** Response: "Running spam sweep on compjunkie@gmail.com... Found 12 spam. Trashing... Done."
+**Visual:** Response: "Running spam sweep on user@gmail.com... Found 12 spam. Trashing... Done."
 
 "12 spam emails trashed in 45 seconds. Including the usual Russian dating scams and fake missed calls."
 
