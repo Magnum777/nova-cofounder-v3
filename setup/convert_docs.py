@@ -56,19 +56,8 @@ def html_to_pdf(html_path, pdf_path):
         'margin-bottom': '20mm',
         'margin-left': '15mm',
         'encoding': 'UTF-8',
-        'no-outline': None,
         'enable-local-file-access': None,
-        'disable-smart-shrinking': None,
         'print-media-type': None,
-        # Suppress ALL headers/footers
-        'header-left': '',
-        'header-center': '',
-        'header-right': '',
-        'header-line': '',
-        'footer-left': '',
-        'footer-center': '',
-        'footer-right': '',
-        'footer-line': '',
     }
     
     config = pdfkit.configuration(wkhtmltopdf=WKHTML)
