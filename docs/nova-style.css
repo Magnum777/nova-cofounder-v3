@@ -178,6 +178,11 @@ hr {
 
 /* Print optimizations */
 @media print {
+  @page {
+    margin: 20mm 15mm;
+    size: auto;
+  }
+  
   body {
     background: white;
     padding: 20px 30px;
