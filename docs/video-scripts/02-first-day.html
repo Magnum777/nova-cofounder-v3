@@ -186,18 +186,20 @@ hr {
 /* Print optimizations */
 @media print {
   @page {
-    margin: 20mm 15mm;
+    margin: 0;
     size: auto;
   }
   
   body {
     background: white;
-    padding: 20px 30px;
+    padding: 20mm 15mm;
+    margin: 0;
   }
   
   .cover {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    padding: 60mm 20mm;
   }
   
   h1 {
