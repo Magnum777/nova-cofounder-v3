@@ -61,6 +61,7 @@ def html_to_pdf(html_path, pdf_path):
         EDGE,
         "--headless",
         f"--print-to-pdf={pdf_path}",
+        "--print-to-pdf-no-header",
         "--run-all-compositor-stages-before-draw",
         "--virtual-time-budget=10000",
         file_url
