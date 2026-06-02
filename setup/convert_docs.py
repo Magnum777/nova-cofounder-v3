@@ -1,34 +1,26 @@
 #!/usr/bin/env python3
-"""Convert .md files to HTML (styled) and PDF (via Chrome headless)."""
+"""Convert .md files to HTML and PDF via Playwright (clean headers/footers)."""
 
 import markdown
 import os
-import sys
-import subprocess
 from pathlib import Path
 
 BASE = Path(__file__).parent.parent / "docs"
 STYLE = BASE / "nova-style.css"
-EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-if not os.path.exists(EDGE):
-    EDGE = r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"
 
 def md_to_html(md_path, html_path, title="Nova AI Cofounder V3"):
     """Convert markdown to styled HTML."""
     with open(md_path, "r", encoding="utf-8") as f:
         md_text = f.read()
     
-    # Convert markdown to HTML body
     md = markdown.Markdown(extensions=["tables", "fenced_code", "toc"])
     html_body = md.convert(md_text)
     
-    # Read CSS
     css = ""
     if STYLE.exists():
         with open(STYLE, "r", encoding="utf-8") as f:
             css = f.read()
     
-    # Build full HTML document
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,34 +38,36 @@ def md_to_html(md_path, html_path, title="Nova AI Cofounder V3"):
     
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html)
-    
     print(f"  HTML: {md_path.name}")
 
 def html_to_pdf(html_path, pdf_path):
-    """Convert HTML to PDF via Edge headless."""
-    if not os.path.exists(EDGE):
-        print(f"  PDF skipped (Edge not found)")
+    """Convert HTML to PDF via Playwright (no headers/footers)."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print(f"  PDF skipped: Install playwright (`pip install playwright; playwright install chromium`)")
         return False
     
     file_url = "file:///" + str(html_path).replace("\\", "/")
     
-    cmd = [
-        EDGE,
-        "--headless",
-        f"--print-to-pdf={pdf_path}",
-        "--print-to-pdf-no-header",
-        "--run-all-compositor-stages-before-draw",
-        "--virtual-time-budget=10000",
-        file_url
-    ]
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto(file_url, wait_until="networkidle")
+        
+        page.pdf(
+            path=str(pdf_path),
+            format="A4",
+            margin={"top": "20mm", "right": "15mm", "bottom": "20mm", "left": "15mm"},
+            display_header_footer=False
+        )
+        browser.close()
     
-    result = subprocess.run(cmd, capture_output=True, timeout=30)
-    
-    if os.path.exists(pdf_path):
-        print(f"  PDF:  {Path(pdf_path).name}")
+    if pdf_path.exists():
+        print(f"  PDF:  {pdf_path.name}")
         return True
     else:
-        print(f"  PDF failed: {Path(pdf_path).name}")
+        print(f"  PDF failed: {pdf_path.name}")
         return False
 
 def main():
@@ -100,9 +94,7 @@ def main():
             html_path = video_dir / f"{base}.html"
             md_to_html(md_file, html_path, title="Nova V3 Video Script")
     
-    print("\nDone. Check:")
-    print(f"  {pdf_dir} — HTML + PDF")
-    print(f"  {video_dir} — HTML")
+    print("\nDone.")
 
 if __name__ == "__main__":
     main()
