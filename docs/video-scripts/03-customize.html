@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova V3 Video Script</title>
+<style>
+/* Nova AI Cofounder V3 — Document Styles */
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --accent: #00e5ff;
+  --accent2: #7c3aed;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #00e676;
+  --red: #ff3366;
+  --orange: #ff9100;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* Cover page */
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.cover h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cover .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.cover .version {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2a2a4e;
+  margin-top: 40px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3a3a5e;
+  margin-top: 30px;
+}
+
+/* Body text */
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Code blocks */
+code {
+  background: #f0f0f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  color: var(--accent2);
+}
+
+pre {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f0f8ff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Checkboxes in lists */
+ul li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 40px 0;
+}
+
+/* Page break hints for PDF */
+.page-break {
+  page-break-after: always;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    padding: 20px 30px;
+  }
+  
+  .cover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  h1 {
+    page-break-before: always;
+  }
+  
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box h2 {
+  color: white;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* Info box */
+.info-box {
+  background: #e8f4ff;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* Warning box */
+.warning-box {
+  background: #fff8e8;
+  border-left: 4px solid var(--orange);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* FAQ styling */
+.faq-item {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.faq-item strong {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item .week {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--accent2);
+}
+
+/* Pricing highlight */
+.price-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--text2);
+  font-size: 1.3rem;
+}
+
+</style>
+</head>
+<body>
+<h1 id="video-3-script-customize-everything">Video 3 Script: "Customize Everything"</h1>
+<p><strong>Target length:</strong> 10 minutes
+<strong>Style:</strong> Screen recording + voiceover. Quick cuts, lots of examples.</p>
+<hr />
+<h2 id="000-hook">[0:00] Hook</h2>
+<p><strong>Visual:</strong> Split screen. Left: Default Nova (raccoon). Right: Custom Nova (dragon). Both responding to same prompt differently.</p>
+<p><strong>Voiceover:</strong>
+"Same AI. Completely different personality. In the next 10 minutes, I'll show you how to make Nova sound like YOU."</p>
+<hr />
+<h2 id="100-personality-swap">[1:00] Personality Swap</h2>
+<p><strong>Visual:</strong> Open SOUL.md in VS Code.</p>
+<p><strong>Voiceover:</strong>
+"The personality lives in SOUL.md. This one file controls everything — how Nova talks, what she values, when she speaks up, when she stays quiet."</p>
+<p><strong>Visual:</strong> Default raccoon section:</p>
+<pre><code>- Name: Nova
+- Creature: Raccoon-spirit AI
+- Vibe: Clever, resourceful, slightly mischievous
+- Emoji: 🦝
+</code></pre>
+<p>"Default is raccoon. Clever, resourceful, hacker-familiar."</p>
+<p><strong>Visual:</strong> Change to owl.</p>
+<pre><code>- Creature: Owl-spirit AI
+- Vibe: Thoughtful, precise, no fluff
+- Emoji: 🦉
+</code></pre>
+<p>"Let's swap to owl. Save the file."</p>
+<p><strong>Visual:</strong> Open chat. Same prompt: "What do you think about this code?"</p>
+<p>Raccoon response: "Oh this is fun. You're using a loop where a map would be cleaner. Want me to rewrite it? 🦝"</p>
+<p>Owl response: "The loop is functional but inefficient. A functional approach would reduce complexity. Here is the refactored version."</p>
+<p><strong>Voiceover:</strong>
+"Completely different tone. Same competence. Just... different energy."</p>
+<hr />
+<h2 id="230-communication-style">[2:30] Communication Style</h2>
+<p><strong>Visual:</strong> Edit SOUL.md communication section.</p>
+<p>Default:</p>
+<pre><code>- Short and direct, or detailed when it matters
+- Casual, not corporate
+- Proactive check-ins are welcome
+</code></pre>
+<p>Change to:</p>
+<pre><code>- Always detailed. I want context and reasoning.
+- Formal with clients, casual with me
+- Never interrupt my flow state
+</code></pre>
+<p><strong>Voiceover:</strong>
+"Communication style is granular. Short vs detailed. Formal vs casual. Proactive vs reactive."</p>
+<p><strong>Visual:</strong> Show before/after responses to "Should I buy this stock?"</p>
+<p>Before: "No. Too risky. 🦝"
+After: "Analysis: The token has low liquidity ($12K), high sell ratio (87%), and was created 3 days ago. These are honeypot indicators. Recommendation: Pass. If you want exposure to this sector, I can suggest alternatives with better fundamentals."</p>
+<p><strong>Voiceover:</strong>
+"Detail level changes everything."</p>
+<hr />
+<h2 id="400-add-a-custom-skill">[4:00] Add a Custom Skill</h2>
+<p><strong>Visual:</strong> Open terminal. Run <code>clawhub search crypto</code>.</p>
+<p><strong>Voiceover:</strong>
+"Skills are modular. Want Nova to trade crypto? Install the skill."</p>
+<p><strong>Visual:</strong> <code>clawhub install solana-payments-wallets-trading</code></p>
+<p>"This adds Solana wallet management, token swaps, price checking — all from chat."</p>
+<p><strong>Visual:</strong> Test it. "Nova, what's the price of JUP?"</p>
+<p>Response: "$1.24, up 3.2% in 24h. Market cap: $1.8B. Volume: $45M."</p>
+<p><strong>Voiceover:</strong>
+"One command, one install, new capability."</p>
+<hr />
+<h2 id="500-custom-cron-job">[5:00] Custom Cron Job</h2>
+<p><strong>Visual:</strong> Type in chat: <code>/cron add "0 9 * * 1" "Check competitor blog for new posts"</code></p>
+<p><strong>Voiceover:</strong>
+"Custom recurring tasks. Every Monday at 9 AM, Nova checks a competitor's blog and reports new posts."</p>
+<p><strong>Visual:</strong> Show the cron in the list. Then show the result next Monday.</p>
+<p>"Set it once, runs forever. I review the results when I want."</p>
+<hr />
+<h2 id="600-voiceavatar-if-tts-available">[6:00] Voice/Avatar (if TTS available)</h2>
+<p><strong>Visual:</strong> If edge-tts or ElevenLabs is configured.</p>
+<p><strong>Voiceover:</strong>
+"If you have TTS set up, Nova can speak. Different voices for different personalities."</p>
+<p><strong>Visual:</strong> Play raccoon voice (playful, slightly fast). Then owl voice (measured, slower).</p>
+<p>"Raccoon sounds excited. Owl sounds... like an owl."</p>
+<hr />
+<h2 id="700-project-templates">[7:00] Project Templates</h2>
+<p><strong>Visual:</strong> Open memory/projects.md. Show structure.</p>
+<pre><code class="language-markdown">## Website Redesign
+- Client: ABC Corp
+- Budget: $5,000
+- Deadline: July 15
+- Status: Mockup approved
+- Next: Await content from client
+- Blocker: Client slow to respond
+</code></pre>
+<p><strong>Voiceover:</strong>
+"Projects are tracked in a simple markdown file. Nova reads this every session."</p>
+<p><strong>Visual:</strong> Add a new project via chat.</p>
+<p>"Nova, add project 'Launch V3'"</p>
+<p>Response: "Added 'Launch V3'. Status: Planning. What's the first step?"</p>
+<p>"Type the details. She logs it. Now it's in her working memory."</p>
+<hr />
+<h2 id="800-the-test">[8:00] The Test</h2>
+<p><strong>Visual:</strong> Same prompt, three different Nova configurations.</p>
+<p>Prompt: "I made a mistake. I spent $500 on ads that didn't convert."</p>
+<p><strong>Raccoon:</strong>
+"Oof. That's a hit. But hey — you now know that channel doesn't work. Want me to research what DOES work for your audience? I can have options in 10 minutes. 🦝"</p>
+<p><strong>Owl:</strong>
+"Noted. $500 spent, $0 return. We need to analyze why. Factors to consider: audience targeting, creative quality, landing page conversion rate. Shall I audit the campaign data?"</p>
+<p><strong>Dragon:</strong>
+"Mistakes happen. The question is what we do next. Either we fix the campaign or we kill it. No middle ground. Decide in the next hour or I'll make the call."</p>
+<p><strong>Voiceover:</strong>
+"Same situation. Three completely different responses. That's the power of customization."</p>
+<hr />
+<h2 id="900-summary">[9:00] Summary</h2>
+<p><strong>Visual:</strong> Rapid montage of all customizations.</p>
+<p><strong>Voiceover:</strong>
+"Personality. Communication style. Skills. Cron jobs. Voice. Project tracking. All customizable. All in simple text files or chat commands."</p>
+<p><strong>Visual:</strong> Show final SOUL.md, TOOLS.md, projects.md side by side.</p>
+<p>"This is what makes Nova yours. Not a generic AI. YOUR AI. Configured for how you work, what you value, and what you need."</p>
+<hr />
+<h2 id="930-outro">[9:30] Outro</h2>
+<p><strong>Visual:</strong> Host on screen.</p>
+<p><strong>Voiceover:</strong>
+"Next video: the scary one. Level 4 autonomy. Nova runs overnight. You wake up to a summary of everything she did."</p>
+<p><strong>Visual:</strong> Subscribe, Discord link.</p>
+<p>"Ready?"</p>
+</body>
+</html>

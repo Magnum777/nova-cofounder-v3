@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova AI Cofounder V3</title>
+<style>
+/* Nova AI Cofounder V3 — Document Styles */
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --accent: #00e5ff;
+  --accent2: #7c3aed;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #00e676;
+  --red: #ff3366;
+  --orange: #ff9100;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* Cover page */
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.cover h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cover .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.cover .version {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2a2a4e;
+  margin-top: 40px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3a3a5e;
+  margin-top: 30px;
+}
+
+/* Body text */
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Code blocks */
+code {
+  background: #f0f0f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  color: var(--accent2);
+}
+
+pre {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f0f8ff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Checkboxes in lists */
+ul li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 40px 0;
+}
+
+/* Page break hints for PDF */
+.page-break {
+  page-break-after: always;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    padding: 20px 30px;
+  }
+  
+  .cover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  h1 {
+    page-break-before: always;
+  }
+  
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box h2 {
+  color: white;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* Info box */
+.info-box {
+  background: #e8f4ff;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* Warning box */
+.warning-box {
+  background: #fff8e8;
+  border-left: 4px solid var(--orange);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* FAQ styling */
+.faq-item {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.faq-item strong {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item .week {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--accent2);
+}
+
+/* Pricing highlight */
+.price-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--text2);
+  font-size: 1.3rem;
+}
+
+</style>
+</head>
+<body>
+<h1 id="nova-ai-cofounder-v3-setup-guide">Nova AI Cofounder V3 — Setup Guide</h1>
+<hr />
+<h2 id="page-1-3-what-youre-getting">Page 1-3: What You're Getting</h2>
+<p><strong>Nova AI Cofounder V3</strong> is not a chatbot. It is an AI coworker that lives on your machine, works while you sleep, and handles the tasks you hate.</p>
+<h3 id="what-makes-this-different">What makes this different?</h3>
+<ul>
+<li><strong>Self-hosted</strong> — Your data stays on your machine. No cloud subscription. No API bills unless you want them.</li>
+<li><strong>Autonomous</strong> — Set it to L3+ and it executes tasks, cleans your inbox, posts to social, monitors projects — without waking you.</li>
+<li><strong>Customizable</strong> — You define its personality, its boundaries, and what it's allowed to do. Raccoon, fox, owl, dragon, or custom.</li>
+<li><strong>Skill-based</strong> — Add capabilities like WordPress publishing, Gmail cleanup, trade monitoring, social media posting. Install only what you need.</li>
+</ul>
+<h3 id="what-youll-have-after-setup">What you'll have after setup:</h3>
+<ul>
+<li>An AI that knows your name, your projects, and your communication style</li>
+<li>Morning briefings with weather, calendar, and project status</li>
+<li>Automatic email spam cleanup</li>
+<li>Scheduled social media posts</li>
+<li>Project tracking with milestone reminders</li>
+<li>A growing memory of everything you've done together</li>
+</ul>
+<h3 id="setup-time-30-45-minutes">Setup time: 30-45 minutes</h3>
+<p><strong>Requirements:</strong>
+- Windows 10/11, macOS, or Linux
+- 8GB RAM minimum (16GB recommended for local AI model)
+- Python 3.11+ (installer will install if missing)
+- Internet connection (for initial download)</p>
+<hr />
+<h2 id="page-4-8-before-you-start">Page 4-8: Before You Start</h2>
+<h3 id="have-ready">Have ready:</h3>
+<ol>
+<li><strong>Gmail account with IMAP enabled</strong> (optional but recommended)</li>
+<li>Settings → Forwarding and POP/IMAP → Enable IMAP</li>
+<li>
+<p>myaccount.google.com/apppasswords → Generate app password</p>
+</li>
+<li>
+<p><strong>Discord account</strong> (optional, for bot integration)</p>
+</li>
+<li>You'll create a bot at discord.com/developers/applications</li>
+<li>
+<p>Copy the bot token during setup</p>
+</li>
+<li>
+<p><strong>API key</strong> (optional, if you want cloud model instead of local)</p>
+</li>
+<li>OpenAI, Anthropic, or Google AI</li>
+<li>
+<p>Local Ollama model is free and runs on your GPU</p>
+</li>
+<li>
+<p><strong>WordPress sites</strong> (optional, for content publishing)</p>
+</li>
+<li>Application password from each site's admin panel</li>
+</ol>
+<h3 id="expected-flow">Expected flow:</h3>
+<pre><code>Run install.ps1 → Answer prompts → Configure channels → Test first task → Done
+</code></pre>
+<h3 id="if-something-goes-wrong">If something goes wrong:</h3>
+<ul>
+<li>Check <code>docs/troubleshooting.pdf</code> (included in download)</li>
+<li>Post in Discord #nova-help: https://discord.gg/clawd</li>
+<li>No paid support, but the community helps</li>
+</ul>
+<hr />
+<h2 id="page-9-18-step-by-step-setup">Page 9-18: Step-by-Step Setup</h2>
+<h3 id="step-1-download-and-extract">Step 1: Download and Extract</h3>
+<ol>
+<li>Purchase from Gumroad (link in your receipt)</li>
+<li>Download <code>nova-cofounder-v3.zip</code></li>
+<li>Extract to a folder (e.g., <code>C:\Tools\Nova</code> or <code>~/nova</code>)</li>
+</ol>
+<h3 id="step-2-run-the-installer">Step 2: Run the Installer</h3>
+<p><strong>Windows (PowerShell as Admin):</strong></p>
+<pre><code class="language-powershell">cd nova-cofounder-v3\setup
+.\install.ps1
+</code></pre>
+<p><strong>Options:</strong>
+- <code>install.ps1 -Docker</code> — Use Docker containers (advanced)
+- <code>install.ps1 -Model api</code> — Use cloud API instead of local Ollama
+- <code>install.ps1 -SkipIntake</code> — Skip the onboarding (do it later)</p>
+<h3 id="step-3-prerequisites-check">Step 3: Prerequisites Check</h3>
+<p>The installer will check for and install if missing:
+- Python 3.11+ (via winget on Windows, brew on macOS)
+- Git (for skill updates)
+- Node.js (for OpenClaw Gateway)
+- Ollama (for local AI model, unless using API)</p>
+<p>You'll see green checkmarks as each passes. If something fails, the script will tell you how to fix it.</p>
+<h3 id="step-4-openclaw-gateway-install">Step 4: OpenClaw Gateway Install</h3>
+<p>The script downloads and installs the OpenClaw Gateway — the runtime that connects you to the AI model, skills, and channels.</p>
+<p>Default install location:
+- Windows: <code>%USERPROFILE%\.openclaw\gateway</code>
+- macOS/Linux: <code>~/.openclaw/gateway</code></p>
+<h3 id="step-5-channel-configuration">Step 5: Channel Configuration</h3>
+<p>The installer will ask about channels one by one:</p>
+<p><strong>Discord:</strong>
+- Enter your bot token (or press Enter to skip)
+- If you have a guild ID, enter it (or I'll help you find it)</p>
+<p><strong>Telegram:</strong>
+- Enter bot token from @BotFather (or skip)</p>
+<p><strong>WhatsApp:</strong>
+- A QR code will be shown to link your phone (or skip)</p>
+<p><strong>"Just local for now?"</strong>
+- Press Enter through all channel prompts
+- You can add channels later via <code>openclaw config</code></p>
+<h3 id="step-6-core-skills-install">Step 6: Core Skills Install</h3>
+<p>The script auto-installs essential skills:
+- <strong>clawhub</strong> — skill marketplace
+- <strong>browser-automation</strong> — web scraping, form filling
+- <strong>memory-hygiene</strong> — keeps memory clean and fast
+- <strong>self-improving-agent</strong> — learns from mistakes
+- <strong>duckdb-en</strong> — data analysis
+- <strong>taskflow</strong> — multi-step task management</p>
+<p>Then it asks about optional skills:
+- gmail-cleanup (spam sweep + inbox triage)
+- wordpress-pro (publishing automation)
+- ai-social-media-content (post generation)
+- upload-post (posting to TikTok, IG, X, etc.)</p>
+<p>Type <code>y</code> for each you want, <code>N</code> to skip.</p>
+<h3 id="step-7-docker-setup-optional">Step 7: Docker Setup (Optional)</h3>
+<p>If you used <code>-Docker</code>, the script:
+- Checks Docker Desktop is installed
+- Copies <code>docker-compose.yml</code> to your workspace
+- Prints: <code>Run "docker-compose up" to start isolated services</code></p>
+<p>Docker containers run: Gateway, Redis (short-term memory), LanceDB (vector memory).</p>
+<h3 id="step-8-launch-intake">Step 8: Launch Intake</h3>
+<p>After install completes, you'll see:</p>
+<pre><code>Nova is installed. Run 'openclaw nova-intake' to start Day 1.
+</code></pre>
+<p>Run it. This starts the 7-day onboarding. Day 1 takes 5 minutes.</p>
+<hr />
+<h2 id="page-19-24-making-it-yours">Page 19-24: Making It Yours</h2>
+<h3 id="customize-soulmd-personality">Customize SOUL.md (Personality)</h3>
+<p>File location: <code>~/.openclaw/workspace/SOUL.md</code></p>
+<p>Edit with any text editor. Key sections:
+- <strong>Identity</strong> — Name, creature, emoji
+- <strong>Approach</strong> — How I think through problems
+- <strong>Execution</strong> — When to ask vs when to act
+- <strong>Boundaries</strong> — What I'm allowed to do unsupervised</p>
+<p>Example customization:</p>
+<pre><code class="language-markdown">## Identity
+- **Name:** Athena
+- **Creature:** Owl-spirit AI
+- **Vibe:** Precise, thoughtful, no fluff
+- **Emoji:** 🦉
+</code></pre>
+<h3 id="add-your-projects">Add Your Projects</h3>
+<p>File: <code>~/.openclaw/workspace/memory/projects.md</code></p>
+<p>List active projects. I reference this every session:</p>
+<pre><code class="language-markdown">## Active Projects
+- **Website Redesign** — WordPress refresh for client X
+- **TradeBot V2** — Solana memecoin trading automation
+- **Nova V3 Launch** — AI cofounder product packaging
+</code></pre>
+<h3 id="set-autonomy-level">Set Autonomy Level</h3>
+<p>Run: <code>/level</code> in chat</p>
+<p>Or edit <code>SAFETY.md</code> directly:</p>
+<pre><code class="language-markdown"># Safety Invariants
+Autonomy Level: L3 (Execute most, notify after)
+
+Hard Limits:
+- Never spend more than $50 without asking
+- Never send emails to new contacts without preview
+- Never post to social media without approval
+- Trash &gt; delete for all file operations
+</code></pre>
+<h3 id="add-custom-cron-jobs">Add Custom Cron Jobs</h3>
+<p>Example: Check a website every hour for changes</p>
+<pre><code class="language-powershell">openclaw cron add --name &quot;price-check&quot; --schedule &quot;0 * * * *&quot; --command &quot;python check_price.py&quot;
+</code></pre>
+<hr />
+<h2 id="page-25-28-common-issues">Page 25-28: Common Issues</h2>
+<h3 id="python-not-found">"Python not found"</h3>
+<p><strong>Fix:</strong> The installer should auto-install Python via winget. If it fails:
+1. Download from python.org
+2. Check "Add Python to PATH" during install
+3. Re-run <code>install.ps1</code></p>
+<h3 id="ollama-model-too-slow">"Ollama model too slow"</h3>
+<p><strong>Fix:</strong> You're running a large model on CPU. Options:
+1. Use a smaller model: <code>ollama pull deepseek-v4-flash</code>
+2. Use API mode: Re-run installer with <code>-Model api</code>
+3. Add a GPU (the 9070 XT in your machine helps)</p>
+<h3 id="discord-bot-wont-connect">"Discord bot won't connect"</h3>
+<p><strong>Fix:</strong>
+1. Check token is correct (no extra spaces)
+2. Bot must be invited to a server with permissions
+3. Gateway must be running: <code>openclaw gateway status</code></p>
+<h3 id="cron-jobs-not-running">"Cron jobs not running"</h3>
+<p><strong>Fix:</strong>
+1. Check gateway is running: <code>openclaw gateway status</code>
+2. Check cron list: <code>openclaw cron list</code>
+3. Check logs: <code>~/.openclaw/gateway/logs/</code></p>
+<h3 id="memory-feels-bloated">"Memory feels bloated"</h3>
+<p><strong>Fix:</strong> Run memory hygiene:</p>
+<pre><code class="language-bash">openclaw skill run memory-hygiene
+</code></pre>
+<p>Or manually review <code>memory/YYYY-MM-DD.md</code> files and archive old ones.</p>
+<hr />
+<h2 id="page-29-30-what-now">Page 29-30: What Now?</h2>
+<h3 id="daily-commands">Daily Commands</h3>
+<ul>
+<li><code>openclaw chat</code> — Start a conversation</li>
+<li><code>/project add [name]</code> — Add a project</li>
+<li><code>/project status [name]</code> — Check on something</li>
+<li><code>/delegate [task]</code> — Assign a task, get back later</li>
+<li><code>/level</code> — Check or change autonomy</li>
+</ul>
+<h3 id="weekly-rituals">Weekly Rituals</h3>
+<ul>
+<li><strong>Monday:</strong> Skill update check (<code>clawhub update --all</code>)</li>
+<li><strong>Wednesday:</strong> Memory review (archive old daily logs)</li>
+<li><strong>Sunday:</strong> Autonomy level review (should I upgrade?)</li>
+</ul>
+<h3 id="community">Community</h3>
+<ul>
+<li><strong>Discord:</strong> https://discord.gg/clawd</li>
+<li><strong>#nova-help:</strong> Ask setup questions</li>
+<li><strong>#showcase:</strong> Share your Nova configuration</li>
+</ul>
+<h3 id="upgrade-path">Upgrade Path</h3>
+<ul>
+<li><strong>V3 → V4</strong> (Q4 2026): Multi-agent teams, voice interface, mobile app</li>
+<li><strong>Skills:</strong> New skills added to ClawHub weekly</li>
+<li><strong>Blog:</strong> aicofounderstack.com for tips and case studies</li>
+</ul>
+<hr />
+<p><strong>You're set. Welcome to having an AI coworker.</strong></p>
+</body>
+</html>

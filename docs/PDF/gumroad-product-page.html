@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova AI Cofounder V3</title>
+<style>
+/* Nova AI Cofounder V3 — Document Styles */
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --accent: #00e5ff;
+  --accent2: #7c3aed;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #00e676;
+  --red: #ff3366;
+  --orange: #ff9100;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* Cover page */
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.cover h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cover .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.cover .version {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2a2a4e;
+  margin-top: 40px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3a3a5e;
+  margin-top: 30px;
+}
+
+/* Body text */
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Code blocks */
+code {
+  background: #f0f0f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  color: var(--accent2);
+}
+
+pre {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f0f8ff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Checkboxes in lists */
+ul li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 40px 0;
+}
+
+/* Page break hints for PDF */
+.page-break {
+  page-break-after: always;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    padding: 20px 30px;
+  }
+  
+  .cover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  h1 {
+    page-break-before: always;
+  }
+  
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box h2 {
+  color: white;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* Info box */
+.info-box {
+  background: #e8f4ff;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* Warning box */
+.warning-box {
+  background: #fff8e8;
+  border-left: 4px solid var(--orange);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* FAQ styling */
+.faq-item {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.faq-item strong {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item .week {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--accent2);
+}
+
+/* Pricing highlight */
+.price-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--text2);
+  font-size: 1.3rem;
+}
+
+</style>
+</head>
+<body>
+<h1 id="gumroad-product-page-nova-ai-cofounder-v3">Gumroad Product Page — Nova AI Cofounder V3</h1>
+<hr />
+<h2 id="hero-section">Hero Section</h2>
+<p><strong>Title:</strong> Nova AI Cofounder V3
+<strong>Subtitle:</strong> Deploy an AI coworker on your machine in 30 minutes. No code. No cloud subscription. No limits.</p>
+<p><strong>Price:</strong> ~~$249~~ <strong>$149</strong> (launch pricing)</p>
+<p><strong>CTA Button:</strong> Buy Now — Instant Download</p>
+<hr />
+<h2 id="problem-section">Problem Section</h2>
+<p><strong>Headline:</strong> You're drowning in busywork.</p>
+<p><strong>Body:</strong>
+You didn't start your business to sort email. Or write social posts. Or check your portfolio every hour.</p>
+<p>You started it to build things. Solve problems. Create value.</p>
+<p>But the admin work keeps growing. The emails pile up. The research never ends. The follow-ups get forgotten.</p>
+<p>Hiring help? Expensive. Virtual assistants? Still need to manage them.</p>
+<p><strong>What if you had an employee who:</strong>
+- Never slept
+- Never forgot anything
+- Handled the tasks you hate
+- Cost $149 one-time, not $3,000/month
+- Lived on YOUR machine (your data, your privacy)</p>
+<hr />
+<h2 id="solution-section">Solution Section</h2>
+<p><strong>Headline:</strong> Nova is not a chatbot. It's an AI coworker.</p>
+<p><strong>Body:</strong>
+Nova AI Cofounder V3 is a self-hosted AI assistant that runs on your computer. It installs with one script, learns who you are in 7 days, and then starts handling your work.</p>
+<p><strong>What you get:</strong></p>
+<p>✅ <strong>Complete Setup Package</strong>
+- One-command installer (Windows, macOS, Linux)
+- Pre-configured skills (web search, browser automation, memory, data analysis)
+- Template files (personality, profile, workspace rules, machine notes)
+- Docker option for isolated deployment</p>
+<p>✅ <strong>7-Day Onboarding</strong>
+- Day 1: Identity (who are you, how do you work)
+- Day 2: Projects (what are you building)
+- Day 3: Communication (how do we talk)
+- Day 4: Tools (Gmail, Discord, WordPress, APIs)
+- Day 5: Schedule (when should I check in)
+- Day 6: Test run (do something real together)
+- Day 7: Autonomy (how much freedom do I get)</p>
+<p>✅ <strong>Autonomy Levels</strong>
+- L1: Ask everything (training wheels)
+- L2: Routine auto, new tasks ask
+- L3: Execute most, notify after
+- L4: Run overnight, morning summary only
+- L5: Full autonomy, interrupt for emergencies only</p>
+<p>✅ <strong>Built-in Skills</strong>
+- Gmail spam cleanup + inbox triage
+- WordPress content publishing
+- Social media post generation + scheduling
+- Trade monitoring (Solana/DeFi)
+- Web research + competitive analysis
+- Data analysis (DuckDB/SQL)
+- Browser automation (forms, screenshots, extraction)</p>
+<p>✅ <strong>Memory System</strong>
+- Short-term: Session context (Redis)
+- Medium-term: 30-day rolling window (LanceDB)
+- Long-term: Permanent business knowledge (curated)
+- Episodic: Decision history + outcomes (learn from mistakes)</p>
+<p>✅ <strong>Community</strong>
+- Discord server with #nova-help channel
+- No paid support — community helps community
+- Opus (creator) drops in when he can</p>
+<hr />
+<h2 id="whats-included">What's Included</h2>
+<p><strong>Instant download after purchase:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup script (install.ps1)</td>
+<td>$99</td>
+</tr>
+<tr>
+<td>7-day intake prompts</td>
+<td>$49</td>
+</tr>
+<tr>
+<td>Template files (SOUL, AGENTS, USER, TOOLS, MEMORY)</td>
+<td>$29</td>
+</tr>
+<tr>
+<td>30-page PDF setup guide</td>
+<td>$39</td>
+</tr>
+<tr>
+<td>4 video walkthroughs</td>
+<td>$79</td>
+</tr>
+<tr>
+<td>Prompt reference (50+ commands)</td>
+<td>$29</td>
+</tr>
+<tr>
+<td>Docker compose file</td>
+<td>$19</td>
+</tr>
+<tr>
+<td>6 months of updates</td>
+<td>$49</td>
+</tr>
+<tr>
+<td>Community Discord access</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Total Value</strong></td>
+<td><strong>$392</strong></td>
+</tr>
+<tr>
+<td><strong>Your Price</strong></td>
+<td><strong>$149</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bonuses:</strong>
+- TradeBot starter kit ($49 value)
+- WordPress content engine ($79 value)
+- Gmail spam sweeper ($29 value)</p>
+<hr />
+<h2 id="how-it-works">How It Works</h2>
+<p><strong>Step 1: Download</strong>
+Purchase → Instant ZIP download → Extract anywhere</p>
+<p><strong>Step 2: Run Installer</strong>
+One PowerShell command. Installs Python, AI model, gateway, skills automatically.</p>
+<p><strong>Step 3: Answer Prompts</strong>
+7-day intake teaches Nova who you are. 5 minutes per day.</p>
+<p><strong>Step 4: Delegate Work</strong>
+Tell Nova what to do. She executes, reports back, learns from feedback.</p>
+<hr />
+<h2 id="use-cases">Use Cases</h2>
+<p><strong>For Solopreneurs:</strong>
+- Email management (spam cleanup, draft replies, flag urgent)
+- Content creation (blog posts, tweets, newsletters)
+- Research (competitors, pricing, market trends)
+- Project tracking (milestones, deadlines, blockers)</p>
+<p><strong>For Developers:</strong>
+- Code review + refactoring suggestions
+- Documentation generation
+- Git commit messages + PR descriptions
+- Stack overflow research</p>
+<p><strong>For Traders:</strong>
+- Portfolio monitoring
+- Token legitimacy checks
+- Price alerts
+- News scanning</p>
+<p><strong>For Agencies:</strong>
+- Client communication management
+- Social media scheduling
+- Content publishing pipelines
+- Reporting automation</p>
+<hr />
+<h2 id="testimonials">Testimonials</h2>
+<p><em>&gt; "I installed Nova on Monday. By Friday, I hadn't checked my email once. She handled everything. I just reviewed her morning brief."</em>
+<strong>— Beta Tester, Digital Agency Owner</strong></p>
+<p><em>&gt; "The autonomy levels are brilliant. I ran L2 for a month, then tried L4. Now I wake up to a summary of everything she did overnight."</em>
+<strong>— Beta Tester, Indie Hacker</strong></p>
+<p><em>&gt; "$149 one-time vs $3,000/month for a VA. The math is obvious."</em>
+<strong>— Beta Tester, Solopreneur</strong></p>
+<hr />
+<h2 id="faq">FAQ</h2>
+<p><strong>Q: Do I need to know how to code?</strong>
+A: No. The installer handles everything. If you can run a PowerShell command, you can install Nova.</p>
+<p><strong>Q: Is my data safe?</strong>
+A: Everything stays on your machine. No cloud storage. No API calls unless you enable them. Your data, your control.</p>
+<p><strong>Q: What hardware do I need?</strong>
+A: Windows 10/11, macOS, or Linux. 8GB RAM minimum (16GB recommended for local AI model). Any modern CPU. GPU optional but speeds up local model.</p>
+<p><strong>Q: Can I use a cloud AI model instead of local?</strong>
+A: Yes. The installer offers both. Local (Ollama, free, private) or API (OpenAI/Anthropic/Google, faster, costs per use).</p>
+<p><strong>Q: What if something breaks?</strong>
+A: Community Discord (#nova-help) is the support channel. No paid support, but the community and creator help when possible. Everything is open source and documented.</p>
+<p><strong>Q: Can I upgrade later?</strong>
+A: Yes. All updates are free for 6 months. After that, major version upgrades are discounted for existing customers.</p>
+<p><strong>Q: Is there a refund policy?</strong>
+A: No. All sales final. This is a digital product with instant access. Preview the docs and requirements before purchasing.</p>
+<p><strong>Q: Can I install on multiple machines?</strong>
+A: One license per person. Install on your personal machines (desktop + laptop). Not for resale or team deployment.</p>
+<hr />
+<h2 id="cta-section">CTA Section</h2>
+<p><strong>Headline:</strong> Your AI coworker is waiting.</p>
+<p><strong>Body:</strong>
+$149 one-time. No subscription. No cloud lock-in.</p>
+<p>Install in 30 minutes. Start delegating work today.</p>
+<p><strong>Button:</strong> Buy Now — Instant Download</p>
+<p><strong>Secondary:</strong> Join Discord First → <a href="https://discord.gg/clawd">discord.gg/clawd</a></p>
+<hr />
+<h2 id="footer">Footer</h2>
+<p><strong>Created by:</strong> James "Opus" Henderson / Layered Media LLC
+<strong>Contact:</strong> nova.cofounder@gmail.com
+<strong>Community:</strong> https://discord.gg/clawd
+<strong>Blog:</strong> https://www.aicofounderstack.com</p>
+<p>© 2026 Layered Media LLC. All rights reserved.</p>
+</body>
+</html>

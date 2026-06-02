@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova AI Cofounder V3</title>
+<style>
+/* Nova AI Cofounder V3 — Document Styles */
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --accent: #00e5ff;
+  --accent2: #7c3aed;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #00e676;
+  --red: #ff3366;
+  --orange: #ff9100;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* Cover page */
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.cover h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cover .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.cover .version {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2a2a4e;
+  margin-top: 40px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3a3a5e;
+  margin-top: 30px;
+}
+
+/* Body text */
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Code blocks */
+code {
+  background: #f0f0f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  color: var(--accent2);
+}
+
+pre {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f0f8ff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Checkboxes in lists */
+ul li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 40px 0;
+}
+
+/* Page break hints for PDF */
+.page-break {
+  page-break-after: always;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    padding: 20px 30px;
+  }
+  
+  .cover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  h1 {
+    page-break-before: always;
+  }
+  
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box h2 {
+  color: white;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* Info box */
+.info-box {
+  background: #e8f4ff;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* Warning box */
+.warning-box {
+  background: #fff8e8;
+  border-left: 4px solid var(--orange);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* FAQ styling */
+.faq-item {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.faq-item strong {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item .week {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--accent2);
+}
+
+/* Pricing highlight */
+.price-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--text2);
+  font-size: 1.3rem;
+}
+
+</style>
+</head>
+<body>
+<h1 id="prompt-reference-nova-ai-cofounder-v3">Prompt Reference — Nova AI Cofounder V3</h1>
+<h2 id="identity-commands">Identity Commands</h2>
+<h3 id="whoami"><code>/whoami</code></h3>
+<p>Display your current USER.md profile.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /whoami
+Name: James &quot;Opus&quot;
+Timezone: America/New_York
+Style: Direct, casual, ADHD when motivated
+Peak hours: 10pm–2am
+</code></pre>
+<h3 id="rename-name"><code>/rename [name]</code></h3>
+<p>Update what Nova calls you.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /rename Boss
+Done. I'll call you Boss from now on.
+</code></pre>
+<h3 id="personality-type"><code>/personality [type]</code></h3>
+<p>Swap Nova's personality archetype.</p>
+<p><strong>Options:</strong>
+- <code>raccoon</code> — Clever, resourceful, hacker-familiar 🦝
+- <code>fox</code> — Strategic, fast, witty 🦊
+- <code>owl</code> — Thoughtful, precise, no fluff 🦉
+- <code>dragon</code> — Bold, direct, high standards 🐉
+- <code>custom</code> — Edit SOUL.md directly</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /personality owl
+Personality updated to Owl. I will be precise and minimize fluff.
+</code></pre>
+<hr />
+<h2 id="work-commands">Work Commands</h2>
+<h3 id="project-add-name"><code>/project add [name]</code></h3>
+<p>Add a project to tracking.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /project add Website Redesign
+Project &quot;Website Redesign&quot; added. Status: Planning.
+What are the first steps?
+</code></pre>
+<h3 id="project-status-name"><code>/project status [name]</code></h3>
+<p>Check on a project's current state.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /project status tradebot
+TradeBot V2: Active
+- Last check: 15 min ago
+- Portfolio: $94.59
+- Positions: 2 open
+- Next action: Monitor for exit signals
+</code></pre>
+<h3 id="project-done-name"><code>/project done [name]</code></h3>
+<p>Mark a project complete and archive it.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /project done launch-v3
+Project &quot;launch-v3&quot; archived. Lessons learned logged to MEMORY.md.
+</code></pre>
+<h3 id="delegate-task"><code>/delegate [task]</code></h3>
+<p>Assign a task to Nova. She'll work on it and report back.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /delegate Research competitors for Nova V3 pricing
+Task accepted. I'll research AI assistant pricing and report back in ~10 minutes.
+</code></pre>
+<hr />
+<h2 id="system-commands">System Commands</h2>
+<h3 id="skill-list"><code>/skill list</code></h3>
+<p>Show installed skills.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /skill list
+Installed skills (6):
+  ✓ clawhub
+  ✓ browser-automation
+  ✓ memory-hygiene
+  ✓ self-improving-agent
+  ✓ duckdb-en
+  ✓ taskflow
+</code></pre>
+<h3 id="skill-add-name"><code>/skill add [name]</code></h3>
+<p>Install a skill from ClawHub.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /skill add wordpress-pro
+Installing wordpress-pro... Done. Run `/skill list` to verify.
+</code></pre>
+<h3 id="skill-remove-name"><code>/skill remove [name]</code></h3>
+<p>Uninstall a skill.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /skill remove wordpress-pro
+Removed wordpress-pro. Config preserved in case you reinstall.
+</code></pre>
+<h3 id="cron-list"><code>/cron list</code></h3>
+<p>Show scheduled recurring tasks.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /cron list
+Scheduled jobs:
+  daily-brief-7am — Every day at 7:00 AM
+  tradebot-monitor — Every 5 minutes
+  memory-hygiene — Sundays at 10:00 PM
+</code></pre>
+<h3 id="cron-add-schedule-task"><code>/cron add "[schedule]" [task]</code></h3>
+<p>Add a new recurring task.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /cron add &quot;0 9 * * 1&quot; &quot;Check competitor prices&quot;
+Job created: competitor-check. Runs Mondays at 9am.
+</code></pre>
+<hr />
+<h2 id="memory-commands">Memory Commands</h2>
+<h3 id="remember-thing"><code>/remember [thing]</code></h3>
+<p>Save something to long-term memory.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /remember James hates em dashes in text
+Saved. I will never use em dashes when writing for James.
+</code></pre>
+<h3 id="whatwas-query"><code>/whatwas [query]</code></h3>
+<p>Search your memory.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /whatwas tradebot last week
+Found in memory/2026-05-31.md:
+- TradeBot portfolio: $94.59
+- Positions: RAY + JUP
+- Last sell: SELL PENGU TAKE_PROFIT (+13.7%)
+</code></pre>
+<h3 id="forget-thing"><code>/forget [thing]</code></h3>
+<p>Remove from memory.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /forget old password xyz123
+Removed from MEMORY.md.
+</code></pre>
+<h3 id="review"><code>/review</code></h3>
+<p>Show recent decisions and outcomes.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /review
+Last 5 decisions:
+1. 2026-06-01: Disabled aicofounderstack ContentNova cron → case studies only
+   Outcome: Better alignment with sales site purpose
+2. 2026-05-31: Published TradeBot Guide on Gumroad
+   Outcome: First product live, $49 price point set
+</code></pre>
+<hr />
+<h2 id="autonomy-commands">Autonomy Commands</h2>
+<h3 id="level"><code>/level</code></h3>
+<p>Show current autonomy level and safety limits.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /level
+Current level: L3 — Execute most, notify after
+Hard limits:
+  - Max spend without ask: $50
+  - New email contacts: Preview required
+  - Social media posts: Approval required
+  - File deletion: Move to trash only
+</code></pre>
+<h3 id="level-up"><code>/level up</code></h3>
+<p>Increase autonomy (with safety check).</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /level up
+Are you sure? L4 means I run overnight with only morning summaries.
+Type CONFIRM to proceed, or CANCEL.
+</code></pre>
+<h3 id="level-down"><code>/level down</code></h3>
+<p>Decrease autonomy.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /level down
+Dropped to L2 — Routine tasks auto, new tasks need approval.
+</code></pre>
+<h3 id="pause"><code>/pause</code></h3>
+<p>Stop all cron jobs temporarily.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /pause
+All cron jobs paused. They will not execute until you run `/resume`.
+</code></pre>
+<h3 id="resume"><code>/resume</code></h3>
+<p>Restart paused cron jobs.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /resume
+All cron jobs resumed. Next execution per schedule.
+</code></pre>
+<hr />
+<h2 id="channel-commands">Channel Commands</h2>
+<h3 id="channel-list"><code>/channel list</code></h3>
+<p>Show configured communication channels.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /channel list
+Channels:
+  ✓ Discord — Guild: Layered Media, Bot: Nova
+  ✗ WhatsApp — Not configured
+  ✗ Telegram — Not configured
+  ✓ Local — Web chat active
+</code></pre>
+<h3 id="channel-add-type"><code>/channel add [type]</code></h3>
+<p>Add a new channel.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /channel add telegram
+Follow BotFather steps: https://core.telegram.org/bots#6-botfather
+Enter your bot token when ready.
+</code></pre>
+<hr />
+<h2 id="utility-commands">Utility Commands</h2>
+<h3 id="status"><code>/status</code></h3>
+<p>Show system health.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /status
+Gateway: Running
+Model: ollama/kimi-k2.6:cloud
+Memory: 127MB used, 4.2GB free
+Skills: 6 active
+Crons: 3 scheduled
+Channels: Discord connected
+</code></pre>
+<h3 id="help-topic"><code>/help [topic]</code></h3>
+<p>Get help on a topic.</p>
+<p><strong>Example:</strong></p>
+<pre><code>&gt; /help skills
+Skills are modular capabilities. Install only what you need.
+Core skills: clawhub, browser-automation, memory-hygiene, self-improving-agent, duckdb-en, taskflow
+Browse more: https://clawhub.ai
+</code></pre>
+<hr />
+<h2 id="quick-reference-card">Quick Reference Card</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/whoami</code></td>
+<td>Show your profile</td>
+</tr>
+<tr>
+<td><code>/project add</code></td>
+<td>Add a project</td>
+</tr>
+<tr>
+<td><code>/project status</code></td>
+<td>Check project state</td>
+</tr>
+<tr>
+<td><code>/delegate</code></td>
+<td>Assign a task</td>
+</tr>
+<tr>
+<td><code>/skill list</code></td>
+<td>Show installed skills</td>
+</tr>
+<tr>
+<td><code>/skill add</code></td>
+<td>Install a skill</td>
+</tr>
+<tr>
+<td><code>/cron list</code></td>
+<td>Show scheduled tasks</td>
+</tr>
+<tr>
+<td><code>/remember</code></td>
+<td>Save to memory</td>
+</tr>
+<tr>
+<td><code>/whatwas</code></td>
+<td>Search memory</td>
+</tr>
+<tr>
+<td><code>/level</code></td>
+<td>Check autonomy</td>
+</tr>
+<tr>
+<td><code>/level up</code></td>
+<td>More freedom</td>
+</tr>
+<tr>
+<td><code>/level down</code></td>
+<td>Less freedom</td>
+</tr>
+<tr>
+<td><code>/pause</code></td>
+<td>Stop all crons</td>
+</tr>
+<tr>
+<td><code>/resume</code></td>
+<td>Restart crons</td>
+</tr>
+<tr>
+<td><code>/status</code></td>
+<td>System health</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>Get help</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>All commands work in any channel — Discord, web chat, or terminal.</strong></p>
+</body>
+</html>

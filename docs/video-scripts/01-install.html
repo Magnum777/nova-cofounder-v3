@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova V3 Video Script</title>
+<style>
+/* Nova AI Cofounder V3 — Document Styles */
+
+:root {
+  --bg: #0a0a0f;
+  --card: #12121a;
+  --accent: #00e5ff;
+  --accent2: #7c3aed;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #00e676;
+  --red: #ff3366;
+  --orange: #ff9100;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a2e;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+/* Cover page */
+.cover {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.cover h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.cover .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.cover .version {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.2rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2a2a4e;
+  margin-top: 40px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3a3a5e;
+  margin-top: 30px;
+}
+
+/* Body text */
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Code blocks */
+code {
+  background: #f0f0f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+  color: var(--accent2);
+}
+
+pre {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f0f8ff;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Checkboxes in lists */
+ul li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  margin: 40px 0;
+}
+
+/* Page break hints for PDF */
+.page-break {
+  page-break-after: always;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background: white;
+    padding: 20px 30px;
+  }
+  
+  .cover {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  h1 {
+    page-break-before: always;
+  }
+  
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+}
+
+/* CTA Box */
+.cta-box {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cta-box h2 {
+  color: white;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+/* Info box */
+.info-box {
+  background: #e8f4ff;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* Warning box */
+.warning-box {
+  background: #fff8e8;
+  border-left: 4px solid var(--orange);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+}
+
+/* FAQ styling */
+.faq-item {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.faq-item strong {
+  color: var(--accent2);
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item .week {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--accent2);
+}
+
+/* Pricing highlight */
+.price-tag {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--text2);
+  font-size: 1.3rem;
+}
+
+</style>
+</head>
+<body>
+<h1 id="video-1-script-install-nova-in-10-minutes">Video 1 Script: "Install Nova in 10 Minutes"</h1>
+<p><strong>Target length:</strong> 8 minutes
+<strong>Style:</strong> Screen recording + voiceover. Fast-paced, no filler.</p>
+<hr />
+<h2 id="000-hook">[0:00] Hook</h2>
+<p><strong>Visual:</strong> Fast montage of Nova doing things — checking email, posting to Discord, analyzing data, writing content.</p>
+<p><strong>Voiceover:</strong>
+"What if you had an employee who never slept, never forgot anything, and handled all the work you hate?"</p>
+<p><strong>Visual:</strong> Cut to host at desk, casual, no corporate vibe.</p>
+<p>"That's Nova. And in the next 10 minutes, you're going to install one on your own machine."</p>
+<hr />
+<h2 id="030-the-product">[0:30] The Product</h2>
+<p><strong>Visual:</strong> Show Gumroad product page. $149 price. Scroll through what's included.</p>
+<p><strong>Voiceover:</strong>
+"Nova AI Cofounder V3. It's not a chatbot. It's not a subscription. It's a self-hosted AI coworker that lives on your computer, works while you sleep, and actually does things."</p>
+<p><strong>Visual:</strong> Quick list of included items:
+- Setup script
+- PDF guide
+- Video walkthroughs
+- Prompt library
+- 7-day onboarding</p>
+<p>"For $149, you get the full setup package, a 30-page guide, these video walkthroughs, and a 7-day onboarding sequence that teaches Nova who you are and how you work."</p>
+<hr />
+<h2 id="100-download">[1:00] Download</h2>
+<p><strong>Visual:</strong> Screen recording. Download the ZIP from Gumroad receipt. Extract it.</p>
+<p><strong>Voiceover:</strong>
+"After purchase, download the ZIP and extract it anywhere. I put mine in C:\Tools."</p>
+<p><strong>Visual:</strong> Show folder contents. setup/, config/, prompts/, docs/.</p>
+<p>"Here's what you get. The setup folder has the installer. Config has templates for Nova's personality and your profile. Prompts has the 7-day intake. And docs has the full guide."</p>
+<hr />
+<h2 id="130-run-the-installer">[1:30] Run the Installer</h2>
+<p><strong>Visual:</strong> Right-click PowerShell, Run as Administrator. Type the install command.</p>
+<p><strong>Voiceover:</strong>
+"Open PowerShell as admin. Navigate to the setup folder. And run install.ps1."</p>
+<p><strong>Visual:</strong> Show terminal output. Prerequisites check — Python, Git, Node, Ollama.</p>
+<p>"The script checks what you have and installs what's missing. Python, Git, Node.js, Ollama for the AI model. All automatic."</p>
+<p><strong>Visual:</strong> Green checkmarks appearing. One yellow warning about Docker.</p>
+<p>"It'll ask about Docker — you can skip it, it's optional. Native install is faster."</p>
+<hr />
+<h2 id="230-openclaw-gateway">[2:30] OpenClaw Gateway</h2>
+<p><strong>Visual:</strong> Terminal shows OpenClaw Gateway downloading and installing.</p>
+<p><strong>Voiceover:</strong>
+"Next it installs the OpenClaw Gateway — this is the runtime that connects everything. The AI model, the skills, your channels."</p>
+<p><strong>Visual:</strong> Show the gateway folder structure.</p>
+<p>"It lives in your home directory under .openclaw. Everything Nova needs is right here."</p>
+<hr />
+<h2 id="300-channel-setup">[3:00] Channel Setup</h2>
+<p><strong>Visual:</strong> Terminal prompts for Discord token. Show discord.com/developers/applications. Create app, bot, copy token.</p>
+<p><strong>Voiceover:</strong>
+"Now it asks about channels. How do you want to talk to Nova?"</p>
+<p><strong>Visual:</strong> Enter Discord token. Then Telegram — skip. WhatsApp — skip.</p>
+<p>"I use Discord for most things, so I enter my bot token. Telegram and WhatsApp are optional. You can add them later."</p>
+<hr />
+<h2 id="330-skills">[3:30] Skills</h2>
+<p><strong>Visual:</strong> Terminal shows core skills installing. Then optional skills prompt.</p>
+<p><strong>Voiceover:</strong>
+"Skills are Nova's capabilities. Core skills install automatically — web search, browser automation, memory management."</p>
+<p><strong>Visual:</strong> Yes to gmail-cleanup. Yes to wordpress-pro. No to ai-social-media. Yes to upload-post.</p>
+<p>"Then it asks about optional skills. I want Gmail cleanup and WordPress publishing. Social media can wait."</p>
+<hr />
+<h2 id="400-templates">[4:00] Templates</h2>
+<p><strong>Visual:</strong> Show files being copied to ~/.openclaw/workspace/</p>
+<p><strong>Voiceover:</strong>
+"Now it copies the template files — SOUL.md for Nova's personality, USER.md for your profile, AGENTS.md for workspace rules, TOOLS.md for your machine specs, and MEMORY.md for long-term storage."</p>
+<p><strong>Visual:</strong> Open SOUL.md in Notepad. Default raccoon personality.</p>
+<p>"By default, Nova is a raccoon — clever, resourceful, slightly mischievous. You can change this later."</p>
+<hr />
+<h2 id="430-launch-intake">[4:30] Launch Intake</h2>
+<p><strong>Visual:</strong> Terminal shows "Nova is installed. Run 'openclaw nova-intake' to start Day 1."</p>
+<p><strong>Voiceover:</strong>
+"Install complete. Now we run the intake — a 7-day onboarding that teaches Nova who you are."</p>
+<p><strong>Visual:</strong> Run the command. Day 1 prompt appears.</p>
+<p>"Day 1 is identity — your name, your business, your timezone, how you work best. Takes about 5 minutes."</p>
+<p><strong>Visual:</strong> Answer prompts quickly (sped up 3x). Type DONE.</p>
+<p>"That's it. Day 1 complete."</p>
+<hr />
+<h2 id="530-first-interaction">[5:30] First Interaction</h2>
+<p><strong>Visual:</strong> Open web chat. Type "Hey Nova, what's my timezone?"</p>
+<p><strong>Voiceover:</strong>
+"Let's test it. Nova, what's my timezone?"</p>
+<p><strong>Visual:</strong> Response: "America/New_York. You told me during intake."</p>
+<p>"She remembers. Already."</p>
+<hr />
+<h2 id="600-first-task">[6:00] First Task</h2>
+<p><strong>Visual:</strong> Type "/delegate Research AI assistant pricing"</p>
+<p><strong>Voiceover:</strong>
+"Let's do something real. I need to know what competitors charge for AI assistants."</p>
+<p><strong>Visual:</strong> Nova responds: "Task accepted. I'll research pricing and report back."</p>
+<p>"Nova goes off, searches the web, analyzes results."</p>
+<p><strong>Visual:</strong> Wait 30 seconds. Result appears.</p>
+<p>"Here's the breakdown — ChatGPT Plus at $20, Claude Pro at $20, but nothing at the $149 self-hosted level. Good data for my pricing page."</p>
+<hr />
+<h2 id="700-summary">[7:00] Summary</h2>
+<p><strong>Visual:</strong> Show everything installed — Gateway running, Discord bot online, skills installed, templates configured.</p>
+<p><strong>Voiceover:</strong>
+"In 10 minutes: OpenClaw Gateway installed, Discord bot connected, 6 core skills ready, personality configured, first task completed."</p>
+<p><strong>Visual:</strong> Show Gumroad page again. $149.</p>
+<p>"Nova AI Cofounder V3. $149 one-time. No subscription. Your AI coworker, on your machine, working while you sleep."</p>
+<p><strong>Visual:</strong> CTA screen.</p>
+<p>"Link in description. 25% off with code NOVA25 for the first 100 buyers."</p>
+<hr />
+<h2 id="730-outro">[7:30] Outro</h2>
+<p><strong>Visual:</strong> Host back on screen.</p>
+<p><strong>Voiceover:</strong>
+"Questions? Drop them below. Or join our Discord — link in description. No paid support, just a community of people running AI coworkers."</p>
+<p><strong>Visual:</strong> Subscribe button, Discord link.</p>
+<p>"See you in the next video — Day 1 with Nova."</p>
+</body>
+</html>
