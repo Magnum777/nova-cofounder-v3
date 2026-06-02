@@ -209,7 +209,7 @@ Install in 30 minutes. Start delegating work today.
 
 **Button:** Buy Now — Instant Download
 
-**Secondary:** Join Discord First → [discord.gg/clawd](https://discord.gg/clawd)
+**Secondary:** Join Discord First → [discord.gg/XxDCEwg7Wh](https://discord.gg/XxDCEwg7Wh)
 
 ---
 
@@ -217,7 +217,7 @@ Install in 30 minutes. Start delegating work today.
 
 **Created by:** James "Opus" Henderson / Layered Media LLC
 **Contact:** nova.cofounder@gmail.com
-**Community:** https://discord.gg/clawd
+**Community:** https://discord.gg/XxDCEwg7Wh
 **Blog:** https://www.aicofounderstack.com
 
 © 2026 Layered Media LLC. All rights reserved.

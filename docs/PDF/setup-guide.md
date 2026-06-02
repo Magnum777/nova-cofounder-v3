@@ -54,7 +54,7 @@ Run install.ps1 → Answer prompts → Configure channels → Test first task �
 
 ### If something goes wrong:
 - Check `docs/troubleshooting.pdf` (included in download)
-- Post in Discord #nova-help: https://discord.gg/clawd
+- Post in Discord #nova-help: https://discord.gg/XxDCEwg7Wh
 - No paid support, but the community helps
 
 ---
@@ -250,7 +250,7 @@ Or manually review `memory/YYYY-MM-DD.md` files and archive old ones.
 - **Sunday:** Autonomy level review (should I upgrade?)
 
 ### Community
-- **Discord:** https://discord.gg/clawd
+- **Discord:** https://discord.gg/XxDCEwg7Wh
 - **#nova-help:** Ask setup questions
 - **#showcase:** Share your Nova configuration
 
